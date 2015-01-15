@@ -1,7 +1,10 @@
 zh-TW:
   activerecord:
+
     models:
       user: 會員
+      product: '行程'
+
     attributes:
       user:
         nickname: '暱稱'
@@ -11,3 +14,5 @@ zh-TW:
         gender: '性別'
         password_confirmation: '密碼確認'
         current_password: '舊密碼'
+      product:
+        title: '行程名稱'
