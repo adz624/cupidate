@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>成為Cupidate會員</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -6,6 +6,21 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, User.gender_collection %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product %><br />
+    <%= f.select :product_id, Product.collection_for_select %>
   </div>
 
   <div class="field">
