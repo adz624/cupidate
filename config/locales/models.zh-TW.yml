@@ -1,0 +1,13 @@
+zh-TW:
+  activerecord:
+    models:
+      user: 會員
+    attributes:
+      user:
+        nickname: '暱稱'
+        email: '信箱'
+        password: '密碼'
+        product: '行程'
+        gender: '性別'
+        password_confirmation: '密碼確認'
+        current_password: '舊密碼'
