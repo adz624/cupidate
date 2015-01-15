@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+#error_explanation {
+  background: red;
+  color: white;
+  padding: 10px;
+}
