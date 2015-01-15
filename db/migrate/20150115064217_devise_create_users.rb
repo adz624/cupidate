@@ -32,16 +32,16 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
 
       t.string :nickname
-      t.string :avatar
       t.text :aboutme
       t.integer :gender
-      t.integer :product_id
+      t.belongs_to :product
 
       t.timestamps
     end
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
+    add_index :users, :product_id
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
