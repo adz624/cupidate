@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20150115064217) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "nickname"
+    t.string   "avatar"
+    t.text     "aboutme"
+    t.integer  "gender"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

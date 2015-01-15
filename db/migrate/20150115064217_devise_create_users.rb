@@ -31,6 +31,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
 
+      t.string :nickname
+      t.string :avatar
+      t.text :aboutme
+      t.integer :gender
+      t.integer :product_id
+
       t.timestamps
     end
 
