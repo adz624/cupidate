@@ -29,6 +29,9 @@ gem 'devise'
 gem 'rails-i18n' # 提供各國語言包 (activerecord errors message, datetime format ... etc)
 gem 'devise-i18n' # 提供 devise 語言包
 
+
+gem 'bootstrap-sass', '~> 3.3.3'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
