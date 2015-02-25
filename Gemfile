@@ -40,4 +40,7 @@ gem 'devise-i18n' # 提供 devise 語言包
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
