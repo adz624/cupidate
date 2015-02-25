@@ -1,1 +1,7 @@
 Hello, I'm Home
+<hr>
+
+<%= form_for(:search, url: search_path, method: :get) do |f| %>
+  <%= f.text_field :email, placeholder: '請輸入好友 Email' %>
+  <%= f.submit :search %>
+<% end %>
