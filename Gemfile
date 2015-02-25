@@ -24,10 +24,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
 gem 'devise'
 gem 'rails-i18n' # 提供各國語言包 (activerecord errors message, datetime format ... etc)
 gem 'devise-i18n' # 提供 devise 語言包
+
+
+gem 'bootstrap-sass', '~> 3.3.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
