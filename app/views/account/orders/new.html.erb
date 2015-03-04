@@ -1,0 +1,4 @@
+<%= form_for([:account, @order]) do |f| %>
+  <%= f.text_field :deposit_amount %>
+  <%= f.submit 'create order' %>
+<% end %>
