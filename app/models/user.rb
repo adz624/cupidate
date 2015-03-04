@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   enum gender: { male: 1, female: 2 }
 
   belongs_to :product
+  has_many :orders
   has_many :avatars, class: :UserAvatar
 
 
