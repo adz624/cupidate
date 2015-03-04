@@ -6,8 +6,27 @@ Hello, I'm Home
   <%= f.submit :search %>
 <% end %>
 
+<hr>
+root_path: <%= root_path %><br>
+root_url: <%= root_url %><Br>
+<hr>
 <a href="" class="btn btn-primary">Primary</a>
 <a href="" class="btn btn-info">Info</a>
 <a href="" class="btn btn-success">Success</a>
 <a href="" class="btn btn-warning">Warning</a>
 <a href="" class="btn btn-danger">Danger</a>
+<% if user_signed_in? %>
+  <% payment_service_for(:order, 'eddie.li.624@gmail.com', service: :allpay, html: { id: 'allpay-atm-form', method: :post, authenticity_token: false, enforce_utf8: false  }) do |service| %>
+    <% service.merchant_trade_no("#{current_user.id}SPLIT#{Time.now.to_i}") %>
+    <% service.merchant_trade_date(Time.now) %>
+    <% service.total_amount(300) %>
+    <% service.trade_desc("測試交易") %>
+    <% service.item_name("商品敘述") %>
+    <% service.choose_payment(ActiveMerchant::Billing::Integrations::Allpay::PAYMENT_CREDIT_CARD) %>
+    <% service.client_back_url(root_url) %>
+    <% service.return_url(payment_callback_url) %>
+    <% service.encrypted_data %>
+    <input type="submit" value="Buy!">
+  <% end %>
+<% end %>
+<%= payment_callback_url %>
