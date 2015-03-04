@@ -1,5 +1,5 @@
-class OrdersController < ApplicationController
-
+class Account::OrdersController < ApplicationController
+  before_action :authenticate_user!
   def new
     @order = Order.new
   end
@@ -9,8 +9,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new
-    if @order.save(order_params)
+    @order = Order.new(order_params)
+    if @order.save
       redirect_to account_order_path(@order), notice: '創建 order 成功，請趕快付款'
     else
       render :new
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.all.page(params[:page])
+    @orders = current_user.orders.all
   end
 
 

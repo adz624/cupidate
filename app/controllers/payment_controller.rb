@@ -6,11 +6,10 @@ class PaymentController < ApplicationController
 
     if notification.status && notification.checksum_ok?
 
-      user_id, created_at = notification.merchant_trade_no.split('SPLIT')
-      # 這裏是付款完成
-      File.write("#{Rails.root}/log/payment.log", request.raw_post.inspect)
-      File.write("#{Rails.root}/log/payment.log", notification.inspect)
+      order_id, created_at = notification.merchant_trade_no.split('SPLIT')
 
+      @order = Order.find(order_id)
+      @order.paid!
       render text: '1|OK', status: 200
     else
       # 這裏是其他 (有人在 try, 付款失敗 ... etc)
