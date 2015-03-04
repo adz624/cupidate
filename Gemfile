@@ -31,6 +31,9 @@ gem 'devise-i18n' # 提供 devise 語言包
 
 gem 'bootstrap-sass', '~> 3.3.3'
 
+gem 'activemerchant', "~> 1.43.1"
+gem 'active_merchant_allpay'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
