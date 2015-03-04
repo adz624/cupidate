@@ -7,6 +7,11 @@ Rails.application.routes.draw do
  
   post 'payment/callback', to: 'payment#callback'
  
+
+  namespace :account do
+    resources :orders, only: [:index, :new, :create]
+  end
+
   resources :profiles, only: [:index, :show]
  
   namespace :male do
