@@ -9,7 +9,7 @@ Rails.application.routes.draw do
  
 
   namespace :account do
-    resources :orders, only: [:index, :new, :create]
+    resources :orders, only: [:index, :new, :create, :show]
   end
 
   resources :profiles, only: [:index, :show]
